@@ -1,0 +1,32 @@
+<div class="container">
+
+  <ng-template #customLoadingTemplate>
+  </ng-template>
+  <div class="content">
+    <header>
+      <div>
+        <img [src]="getEmployeeProperty('picture')" [alt]="'employee'+getEmployeeProperty('firstName')">
+      </div>
+      <div>
+        <div class="h1Parent">
+          <h1>{{getEmployeeProperty('firstName') + " " + getEmployeeProperty('lastName')}}</h1>
+          <p>BirthDay : {{getEmployeeBirthday()}} - {{getEmployeeProperty("gender")}}</p>
+        </div>
+        <p>
+          <mat-icon>email</mat-icon>
+          {{getEmployeeProperty('email')}}</p>
+        <p>
+          <mat-icon>phone</mat-icon>
+          {{getEmployeeProperty('phone')}}</p>
+      </div>
+    </header>
+    <p class="bio">Country : {{getEmployeeAddress("country")}}</p>
+    <p class="bio">state : {{getEmployeeAddress("state")}}</p>
+    <p class="bio">city : {{getEmployeeAddress("city")}}</p>
+    <p class="bio">street : {{getEmployeeAddress("street")}}</p>
+    <p class="bio">timezone : {{getEmployeeAddress("timezone")}}</p>
+  </div>
+  <ngx-loading [show]="loading" [config]="{backgroundColor : 'red', backdropBorderRadius: '3px' }"
+               [template]="customLoadingTemplate"></ngx-loading>
+
+</div>

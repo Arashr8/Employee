@@ -1,0 +1,73 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead {
+    background-color: #f4f9fd;
+
+    th {
+      text-align: left;
+    }
+  }
+
+  tbody tr {
+    cursor: pointer;
+  }
+
+  th, td {
+    padding: 0.5rem;
+    border-bottom: 1px solid #44444444;
+  }
+
+  td {
+    background-color: white;
+  }
+
+  .tdAction {
+    padding: 0.5rem 2rem;
+    width: 1rem;
+  }
+
+  .avatarTd {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .avatar {
+    border-radius: 50%;
+    color: white;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.8rem;
+    height: 2rem;
+  }
+}
+
+.container{
+  padding: 2rem;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 1300px) {
+  section {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  section {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+}

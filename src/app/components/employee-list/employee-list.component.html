@@ -1,0 +1,22 @@
+<div class="container">
+  <section>
+    <article *ngFor="let employee of employees" [routerLink]="'/'+employee.id">
+      <!-- Cards with media area -->
+      <mat-card class="example-card">
+        <mat-card-title-group>
+          <mat-card-title>{{employee.title + " " + employee.firstName + " " + employee.lastName}}</mat-card-title>
+          <mat-card-subtitle>{{employee.id}}</mat-card-subtitle>
+          <img mat-card-sm-image [src]="employee.picture" style="border-radius: 50%">
+        </mat-card-title-group>
+        <mat-card-actions>
+          <button mat-button>View</button>
+        </mat-card-actions>
+      </mat-card>
+    </article>
+  </section>
+  <mat-paginator [length]="this.paginationMetaData?.total"
+                 [pageSize]="this.paginationMetaData?.limit"
+                 (page)="handleChangePage($event)"
+                 aria-label="Select page">
+  </mat-paginator>
+</div>
